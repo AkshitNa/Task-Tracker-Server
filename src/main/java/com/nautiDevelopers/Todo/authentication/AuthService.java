@@ -27,7 +27,7 @@ public class AuthService {
                 .build();
 
         try {
-            User temp = repository.save(user);
+            repository.save(user);
             var jwtToken = jwtUtil.generateToken(user);
             return UserAuthRes.builder()
                     .success(true)
